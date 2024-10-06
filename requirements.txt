@@ -8,3 +8,6 @@ pydub==0.25.1
 pymupdf4llm==0.0.17
 PyPDF2==3.0.1
 gunicorn==23.0.0
+aiofiles==24.1.0
+frontend==0.0.3
+starlette==0.39.2
