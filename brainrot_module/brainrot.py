@@ -31,12 +31,12 @@ def modify_video(video_file, data,output_file_path):
     duration_per_chunk = 2  # Duration for each text chunk (in seconds)
     for i, chunk in enumerate(formatted_chunks):
         # Create shadow text clip with a slight offset for the shadow effect
-        txt_clip_shadow = TextClip(chunk, fontsize=30, color='black', font="Arial-Bold") \
+        txt_clip_shadow = TextClip(chunk, fontsize=30, color='black') \
             .set_duration(duration_per_chunk) \
             .set_position(('center', 'center'))  # Position the shadow at the center
 
         # Create the main text clip, with a slight offset for the shadow effect
-        txt_clip = TextClip(chunk, fontsize=30, color='green', font="Arial-Bold") \
+        txt_clip = TextClip(chunk, fontsize=30, color='green') \
             .set_duration(duration_per_chunk) \
             .set_position(lambda t: ('center', video.h // 1 - 5))  # Adjust the main text slightly above the shadow
 
