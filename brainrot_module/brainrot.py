@@ -2,6 +2,10 @@ import pymupdf4llm
 import traceback
 from openai import OpenAI
 from moviepy.editor import *
+import os
+os.environ['MAGICK_HOME'] = '/usr/local/bin/'
+
+
 
 model_name = "gpt-4o-mini"
 client = OpenAI()
@@ -31,12 +35,12 @@ def modify_video(video_file, data,output_file_path):
     duration_per_chunk = 2  # Duration for each text chunk (in seconds)
     for i, chunk in enumerate(formatted_chunks):
         # Create shadow text clip with a slight offset for the shadow effect
-        txt_clip_shadow = TextClip(chunk, fontsize=30, color='black') \
+        txt_clip_shadow = TextClip(chunk, fontsize=30, color='black', font="Arial-Bold") \
             .set_duration(duration_per_chunk) \
             .set_position(('center', 'center'))  # Position the shadow at the center
 
         # Create the main text clip, with a slight offset for the shadow effect
-        txt_clip = TextClip(chunk, fontsize=30, color='green') \
+        txt_clip = TextClip(chunk, fontsize=30, color='green',font="Arial-Bold") \
             .set_duration(duration_per_chunk) \
             .set_position(lambda t: ('center', video.h // 1 - 5))  # Adjust the main text slightly above the shadow
 
