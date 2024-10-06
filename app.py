@@ -32,6 +32,10 @@ def allowed_file(filename):
     print("Checking for right extension of the file ...")
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/', methods=['GET'])
+def serve_homepage():
+    return jsonify({"message":"Welcome to homepage"})
+
 @app.route('/createPodcast', methods=['POST'])
 def upload_file():
     """Handle the file upload and processing."""
