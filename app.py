@@ -111,4 +111,5 @@ if __name__ == '__main__':
     CORS(app)
 
     # Run the app with debug mode to see logs
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    #app.run(debug=True,host='0.0.0.0', port=5000)
+    app.run()
